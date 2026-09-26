@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span>CÂU HỎI NGHIÊN CỨU TRUNG TÂM</span>
             </div>
             <p className="text-base md:text-xl font-serif font-bold text-[var(--color-text-primary)] leading-snug">
-              “Vì sao độc lập dân tộc và chủ nghĩa xã hội được đặt trong quan hệ thống nhất?”
+              “Vì sao Hồ Chí Minh không xem độc lập dân tộc và chủ nghĩa xã hội là hai mục tiêu tách rời, mà đặt chúng trong một quan hệ thống nhất, hai chiều?”
             </p>
           </div>
 

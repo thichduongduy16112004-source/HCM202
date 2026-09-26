@@ -4,25 +4,27 @@ export const guaranteeConditions: GuaranteeCondition[] = [
   {
     id: 'condition-party-leadership',
     order: 1,
-    title: 'Sự lãnh đạo của Đảng Cộng sản Việt Nam',
-    summary: 'Định hướng đường lối và giữ vững mục tiêu độc lập dân tộc gắn với CNXH.',
-    analysis: 'Đảng giữ vai trò tổ chức, định hướng và dẫn dắt quần chúng trong quá trình thực hiện hai mục tiêu.',
+    title: 'Bảo đảm vai trò lãnh đạo của Đảng Cộng sản',
+    summary: 'Điều kiện về vai trò lãnh đạo và định hướng của cách mạng.',
+    analysis: 'Vai trò lãnh đạo của Đảng bảo đảm cách mạng Việt Nam đi theo con đường đã xác định, từ cách mạng dân tộc dân chủ đến cách mạng xã hội chủ nghĩa.',
     evidenceIds: ['evidence-condition-party'],
   },
   {
     id: 'condition-national-unity',
     order: 2,
-    title: 'Khối đại đoàn kết toàn dân tộc',
-    summary: 'Tạo sức mạnh nội sinh cho xây dựng và bảo vệ Tổ quốc.',
-    analysis: 'Quần chúng nhân dân là chủ thể và động lực; việc tập hợp lực lượng rộng rãi biến mục tiêu chung thành sức mạnh thực tiễn.',
+    title: 'Củng cố khối đại đoàn kết dân tộc',
+    summary: 'Điều kiện về sức mạnh đoàn kết trong nước.',
+    analysis: 'Đại đoàn kết dân tộc, với nền tảng là liên minh công nhân – nông dân, tập hợp và phát huy sức mạnh của toàn dân để thực hiện, bảo vệ các mục tiêu cách mạng.',
     evidenceIds: ['evidence-condition-national-unity'],
   },
   {
     id: 'condition-international-solidarity',
     order: 3,
-    title: 'Đoàn kết với cách mạng thế giới',
-    summary: 'Kết hợp sức mạnh dân tộc với sức mạnh thời đại.',
-    analysis: 'Sự ủng hộ của các lực lượng hòa bình và tiến bộ tạo thêm điều kiện quốc tế thuận lợi, đồng thời không thay thế nội lực và quyền tự quyết.',
+    title: 'Gắn bó chặt chẽ với cách mạng thế giới',
+    summary: 'Điều kiện về sức mạnh và sự gắn kết quốc tế.',
+    analysis: 'Đoàn kết quốc tế đặt cách mạng Việt Nam trong mối quan hệ với cách mạng và các phong trào tiến bộ trên thế giới, từ đó tạo thêm sức mạnh để thực hiện mục tiêu của mình.',
     evidenceIds: ['evidence-condition-international-solidarity'],
   },
 ];
+
+export const guaranteeConclusion = 'Ba điều kiện phải được bảo đảm và gắn bó chặt chẽ với nhau để góp phần bảo vệ nền độc lập dân tộc và chủ nghĩa xã hội.';

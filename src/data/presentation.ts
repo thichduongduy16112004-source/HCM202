@@ -52,7 +52,7 @@ export const presentationSections: PresentationSection[] = [
     slug: 'conclusion',
     order: 5,
     title: 'Độc lập dân tộc và chủ nghĩa xã hội',
-    subtitle: 'Ba mảnh ghép trong quan hệ hai chiều giữa hai mục tiêu',
+    subtitle: 'Ba chiều lập luận làm rõ quan hệ thống nhất, hai chiều giữa hai mục tiêu',
     argumentIds: argumentIdsFor('central-argument'),
     imageIds: [],
     presentationDuration: 80,

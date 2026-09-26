@@ -25,7 +25,7 @@ export const ArgumentCard: React.FC<ArgumentCardProps> = ({ argument, evidence, 
       transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
       className="overflow-hidden rounded-2xl border border-[var(--color-border-default)] bg-[var(--color-surface-primary)] shadow-[var(--shadow-sm)]"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div className={images.length > 0 ? 'grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px]' : 'grid grid-cols-1'}>
         <div className="p-6 md:p-9">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
             <div className="flex items-center gap-3">
@@ -67,6 +67,13 @@ export const ArgumentCard: React.FC<ArgumentCardProps> = ({ argument, evidence, 
                           </blockquote>
                         )}
                         <p>{item.summary}</p>
+                        {item.details && item.details.length > 0 && (
+                          <ul className="mt-3 space-y-2 pl-5 list-disc marker:text-[var(--color-accent-gold)]">
+                            {item.details.map((detail) => (
+                              <li key={detail} className="pl-1 text-[var(--color-text-secondary)]">{detail}</li>
+                            ))}
+                          </ul>
+                        )}
                         <p className="mt-2 text-[var(--color-text-muted)]"><strong className="text-[var(--color-text-secondary)]">Ý nghĩa của dẫn chứng: </strong>{item.analysis}</p>
                       </div>
                     </motion.article>

@@ -50,6 +50,7 @@ export interface Evidence {
   title: string;
   quote?: string;
   summary: string;
+  details?: string[];
   analysis: string;
   sourceIds: string[];
   imageIds: string[];
