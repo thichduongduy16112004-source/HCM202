@@ -15,7 +15,6 @@ export const presentationSections: PresentationSection[] = [
     subtitle: 'Mục tiêu – Con đường trong tư tưởng Hồ Chí Minh',
     argumentIds: [],
     imageIds: ['image-bac-doc-tuyen-ngon-1945'],
-    presentationDuration: 20,
   },
   {
     id: 'independence',
@@ -25,7 +24,6 @@ export const presentationSections: PresentationSection[] = [
     subtitle: 'Bốn nội dung cốt lõi',
     argumentIds: argumentIdsFor('independence'),
     imageIds: historicalImages.filter((image) => image.category === 'independence').map((image) => image.id),
-    presentationDuration: 60,
   },
   {
     id: 'archive',
@@ -35,7 +33,6 @@ export const presentationSections: PresentationSection[] = [
     subtitle: 'Văn kiện và hình ảnh theo tiến trình lịch sử',
     argumentIds: [],
     imageIds: historicalImages.map((image) => image.id),
-    presentationDuration: 35,
   },
   {
     id: 'socialism',
@@ -45,7 +42,6 @@ export const presentationSections: PresentationSection[] = [
     subtitle: 'Quan niệm, tính tất yếu, mục tiêu, thời kỳ quá độ và nguyên tắc xây dựng',
     argumentIds: argumentIdsFor('socialism'),
     imageIds: [],
-    presentationDuration: 90,
   },
   {
     id: 'conclusion',
@@ -55,7 +51,6 @@ export const presentationSections: PresentationSection[] = [
     subtitle: 'Ba chiều lập luận làm rõ quan hệ thống nhất, hai chiều giữa hai mục tiêu',
     argumentIds: argumentIdsFor('central-argument'),
     imageIds: [],
-    presentationDuration: 80,
   },
   {
     id: 'conditions',
@@ -64,7 +59,6 @@ export const presentationSections: PresentationSection[] = [
     title: 'Ba điều kiện bảo đảm',
     argumentIds: [],
     imageIds: [],
-    presentationDuration: 35,
   },
   {
     id: 'debate',
@@ -73,7 +67,6 @@ export const presentationSections: PresentationSection[] = [
     title: 'Phản biện học thuật',
     argumentIds: [],
     imageIds: ['image-chanh-cuong-1930'],
-    presentationDuration: 50,
   },
   {
     id: 'limitations',
@@ -82,7 +75,6 @@ export const presentationSections: PresentationSection[] = [
     title: 'Giới hạn khi vận dụng',
     argumentIds: [],
     imageIds: [],
-    presentationDuration: 40,
   },
   {
     id: 'sources',
@@ -91,6 +83,5 @@ export const presentationSections: PresentationSection[] = [
     title: 'Nguồn học thuật',
     argumentIds: [],
     imageIds: [],
-    presentationDuration: 25,
   },
 ];

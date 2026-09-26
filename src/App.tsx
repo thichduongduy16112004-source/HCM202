@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { SectionId, HistoricalImage } from '@/types';
+import { HistoricalImage } from '@/types';
 import { historicalImages } from '@/data/images';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
-import { usePresenterMode } from '@/hooks/usePresenterMode';
 
 // Common Components
 import { Navbar } from '@/components/common/Navbar';
 import { ScrollProgress } from '@/components/common/ScrollProgress';
 import { Lightbox } from '@/components/archive/Lightbox';
 import { SourceDrawer } from '@/components/evidence/SourceDrawer';
-import { PresenterControls } from '@/components/presenter/PresenterControls';
 import { SceneTransition } from '@/components/common/SceneTransition';
 
 // All 9 scenes
@@ -26,18 +24,6 @@ import { Footer } from '@/sections/Footer/Footer';
 
 export const App: React.FC = () => {
   const { activeSection, scrollToSection } = useSectionObserver();
-
-  // Presenter Mode Hook
-  const {
-    isActive: isPresenterActive,
-    isPlaying: isPresenterPlaying,
-    timeRemaining,
-    togglePresenter,
-    togglePlay,
-    goToNext,
-    goToPrev,
-    setIsActive: setIsPresenterActive,
-  } = usePresenterMode(activeSection, scrollToSection);
 
   // Lightbox State
   const [activeLightboxImage, setActiveLightboxImage] = useState<HistoricalImage | null>(null);
@@ -88,8 +74,6 @@ export const App: React.FC = () => {
         activeSection={activeSection}
         onSelectSection={scrollToSection}
         onOpenSources={handleOpenAllSources}
-        onTogglePresenter={togglePresenter}
-        isPresenterActive={isPresenterActive}
       />
 
       {/* Main Content Area: 9 Sequential Academic Scenes */}
@@ -123,19 +107,6 @@ export const App: React.FC = () => {
         sourceId={activeSourceId}
         isOpen={isSourceDrawerOpen}
         onClose={handleCloseSourceDrawer}
-      />
-
-      {/* Floating Presenter Mode Controls */}
-      <PresenterControls
-        isActive={isPresenterActive}
-        isPlaying={isPresenterPlaying}
-        activeSection={activeSection}
-        timeRemaining={timeRemaining}
-        onTogglePlay={togglePlay}
-        onNext={goToNext}
-        onPrev={goToPrev}
-        onExit={() => setIsPresenterActive(false)}
-        onSelectSection={scrollToSection}
       />
 
     </div>

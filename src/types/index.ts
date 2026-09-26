@@ -94,7 +94,6 @@ export interface PresentationSection {
   subtitle?: string;
   argumentIds: string[];
   imageIds: string[];
-  presentationDuration: number;
 }
 
 export interface GuaranteeCondition {
@@ -104,12 +103,4 @@ export interface GuaranteeCondition {
   summary: string;
   analysis: string;
   evidenceIds: string[];
-}
-
-export interface PresenterState {
-  isActive: boolean;
-  isPlaying: boolean;
-  currentSectionId: SectionId;
-  timeRemaining: number;
-  progressPercent: number;
 }

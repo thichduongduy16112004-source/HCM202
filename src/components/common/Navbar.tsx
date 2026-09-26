@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, BookOpen, Layers, Menu, X } from 'lucide-react';
+import { BookOpen, Menu, X } from 'lucide-react';
 import { SectionId } from '@/types';
 import { presentationSections } from '@/data/presentation';
 import { Button } from './Button';
@@ -8,16 +8,12 @@ export interface NavbarProps {
   activeSection: SectionId;
   onSelectSection: (id: SectionId) => void;
   onOpenSources: () => void;
-  onTogglePresenter: () => void;
-  isPresenterActive: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeSection,
   onSelectSection,
   onOpenSources,
-  onTogglePresenter,
-  isPresenterActive,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -30,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           type="button"
           onClick={() => onSelectSection('hero')}
           aria-label="Về phần mở đầu"
-          className="flex items-center gap-3 cursor-pointer group text-left"
+          className="group flex cursor-pointer items-center gap-3 rounded text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-gold)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-bg-primary)]"
         >
           <div className="w-8 h-8 rounded bg-[var(--color-accent-red)] text-white flex items-center justify-center font-serif font-bold text-base shadow-[var(--shadow-sm)] group-hover:bg-[var(--color-accent-red-hover)] transition-colors">
             H
@@ -53,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 key={sec.id}
                 onClick={() => onSelectSection(sec.id)}
-                className={`px-3 py-1.5 rounded text-xs font-medium transition-colors duration-200 cursor-pointer ${
+                className={`cursor-pointer rounded px-3 py-1.5 text-xs font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-gold)] ${
                   isCurrent
                     ? 'bg-[var(--color-surface-secondary)] text-[var(--color-accent-red)] border border-[var(--color-border-strong)] font-semibold'
                     : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface-primary)]'
@@ -79,24 +75,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             Nguồn học thuật
           </Button>
 
-          {/* Presenter Mode Button */}
-          <Button
-            variant={isPresenterActive ? 'primary' : 'outline'}
-            size="sm"
-            onClick={onTogglePresenter}
-            icon={<Play className="w-3.5 h-3.5" />}
-            className={isPresenterActive ? 'ring-2 ring-[var(--color-accent-gold)]' : ''}
-            title="Bật/Tắt chế độ thuyết trình trước lớp"
-          >
-            {isPresenterActive ? 'Đang thuyết trình' : 'Presenter Mode'}
-          </Button>
-
           {/* Mobile Hamburger */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(prev => !prev)}
-            aria-label="Menu"
-            className="lg:hidden p-2 rounded text-[var(--color-text-primary)] hover:bg-[var(--color-surface-secondary)]"
+            aria-label={mobileMenuOpen ? 'Đóng mục lục' : 'Mở mục lục'}
+            className="rounded p-2 text-[var(--color-text-primary)] hover:bg-[var(--color-surface-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-gold)] lg:hidden"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -117,14 +101,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onSelectSection(sec.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center justify-between p-2.5 rounded text-left text-sm ${
+                className={`flex items-center justify-between rounded p-2.5 text-left text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-gold)] ${
                   sec.id === activeSection
                     ? 'bg-[var(--color-surface-secondary)] text-[var(--color-accent-red)] font-semibold'
                     : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-primary)]'
                 }`}
               >
                 <span>{String(sec.order).padStart(2, '0')}. {sec.title}</span>
-                <span className="text-xs font-mono text-[var(--color-text-muted)]">{sec.presentationDuration}s</span>
               </button>
             ))}
           </div>
